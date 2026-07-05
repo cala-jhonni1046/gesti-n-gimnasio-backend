@@ -2,8 +2,16 @@ package com.gimnasio.gestion_gimnasio.cliente;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+@Entity
 public class Cliente {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private   Long id;
+	
 	private String nombre;
 	private String apellido;
 	private String dni;
@@ -11,7 +19,7 @@ public class Cliente {
 	private String  telefono;
 	private String email;
 	private LocalDate fechaIngreso; 
-	private Boolean bestado;
+	private boolean estado;
 	
 	
 	
@@ -64,10 +72,10 @@ public class Cliente {
 		this.fechaIngreso = fechaIngreso;
 	}
 	public Boolean getBestado() {
-		return bestado;
+		return estado;
 	}
 	public void setBestado(Boolean bestado) {
-		this.bestado = bestado;
+		this.estado = bestado;
 	}
 
 }
