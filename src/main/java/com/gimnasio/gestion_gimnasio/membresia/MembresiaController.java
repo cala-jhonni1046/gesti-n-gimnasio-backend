@@ -48,7 +48,7 @@ public class MembresiaController {
 		
 		// Crear nueva membresia
 		@PostMapping("/membresias")
-		public ResponseEntity<Membresia> crearNuevamembresia(@RequestBody Membresia membresia) {
+		public ResponseEntity<Membresia> crearNuevaMembresia(@RequestBody Membresia membresia) {
 			try {
 				Membresia membresiaCreada = service.create(membresia);
 				return ResponseEntity.ok(membresiaCreada);
