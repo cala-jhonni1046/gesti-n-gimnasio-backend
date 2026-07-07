@@ -4,12 +4,15 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.gimnasio.gestion_gimnasio.pago.Pago;
 
 
 
@@ -32,7 +35,7 @@ public class ClienteController {
 	}
 	
 	// Recuperar una sola
-	@GetMapping("/clientes/{id}")
+	@GetMapping("/cliente/{id}")
 	public ResponseEntity <Cliente >buscarClientePorId(@PathVariable Long id) {
 		Cliente cliente = service.getById(id);
 		if (cliente == null) {
@@ -59,7 +62,7 @@ public class ClienteController {
 	}
 	
 	// Actualizar Cliente
-	@PutMapping("/diagnosticos/{id}")
+	@PutMapping("/cliente/{id}")
 	public ResponseEntity < Cliente> actualizarCliente(@PathVariable Long id, @RequestBody Cliente cliente ) {
 		Cliente clienteDesdeServicio = service.getById(id);
 		if (clienteDesdeServicio  == null) {
@@ -72,8 +75,20 @@ public class ClienteController {
 				 return ResponseEntity.badRequest().build();
 			}
 			
-		}	
-	
+		}
+	}
+		// Eliminar un cliente
+	    @DeleteMapping("/cliente/{id}")
+	    public ResponseEntity<?> eliminarCliente(@PathVariable Long id) {
+	        Cliente clienteDesdeServicio = service.getById(id);
+	        if ( clienteDesdeServicio== null) {
+	            return ResponseEntity.notFound().build();
+	        } else {
+	            service.delete(id);
+	            return ResponseEntity.ok().build();
+	        }
+	    }
+
 
 	}
-}
+
