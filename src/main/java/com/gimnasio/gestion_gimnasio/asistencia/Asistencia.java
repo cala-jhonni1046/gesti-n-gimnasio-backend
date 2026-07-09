@@ -1,4 +1,4 @@
-package com.gimnasio.gestion_gimnasio.actividad;
+package com.gimnasio.gestion_gimnasio.asistencia;
 
 import java.time.LocalDateTime;
 
@@ -13,7 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Actividad {
+public class Asistencia {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
