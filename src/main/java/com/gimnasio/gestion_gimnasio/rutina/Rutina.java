@@ -22,7 +22,7 @@ public class Rutina {
 	
 	private String nombreRutina;
 	private String ejerciciosDetalle;
-	private String nivelDificultad;
+	private NivelDificultad nivelDificultad;
 	
 	
 	public Long getId() {
@@ -57,11 +57,11 @@ public class Rutina {
 		this.ejerciciosDetalle = ejerciciosDetalle;
 	}
 	
-	public String getNivelDificultad() {
+	public NivelDificultad getNivelDificultad() {
 		return nivelDificultad;
 	}
 	
-	public void setNivelDificultad(String nivelDificultad) {
+	public void setNivelDificultad(NivelDificultad nivelDificultad) {
 		this.nivelDificultad = nivelDificultad;
 	}
 	
