@@ -29,7 +29,7 @@ public class Suscripcion {
 	
 	private LocalDate fechaInicio;
 	private LocalDate fechaFin;
-	private String estado;
+	private Estado estado;
 	
 	
 	public Long getId() {
@@ -72,11 +72,11 @@ public class Suscripcion {
 		this.fechaFin = fechaFin;
 	}
 	
-	public String getEstado() {
+	public Estado getEstado() {
 		return estado;
 	}
 	
-	public void setEstado(String estado) {
+	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
 
